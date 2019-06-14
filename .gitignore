@@ -11,3 +11,4 @@ gradle
 gradlew
 gradlew.bat
 app/build/*
+newlib/build/*
