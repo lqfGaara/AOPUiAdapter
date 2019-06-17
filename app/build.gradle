@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin:  'com.lqf.gradle'
+//apply plugin:  'com.lqf.gradle'
 
 android {
     compileSdkVersion 28
@@ -26,5 +26,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.github.lqfGaara:Utils:v1.1'
+    implementation 'com.github.lqfGaara:Utils:v1.2'
 }

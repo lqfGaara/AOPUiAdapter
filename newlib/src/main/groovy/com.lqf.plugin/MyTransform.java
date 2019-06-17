@@ -49,10 +49,8 @@ public class MyTransform extends Transform {
         long startTime = System.currentTimeMillis();
         Collection<TransformInput> inputs = transformInvocation.getInputs();
         TransformOutputProvider outputProvider = transformInvocation.getOutputProvider();
-        //删除之前的输出
         if (outputProvider != null)
             outputProvider.deleteAll();
-        //遍历inputs
         for(TransformInput input  :inputs){
             for (DirectoryInput directoryInput:input.getDirectoryInputs()){
                 handleDirectoryInput(directoryInput,outputProvider);
@@ -62,8 +60,6 @@ public class MyTransform extends Transform {
             }
         }
         double cost = (System.currentTimeMillis() - startTime) / 1000;
-        System.out.println("--------------- LifecyclePlugin visit end --------------- ");
-        System.out.println("耗时"+cost+"秒");
     }
     @Override
     public String getName() {
@@ -84,24 +80,15 @@ public class MyTransform extends Transform {
     public boolean isIncremental() {
         return isIncremental;
     }
-    /**
-     * 检查class文件是否需要处理
-     * @return
-     */
+
     static boolean checkClassFile(String name) {
-        //只处理需要的class文件
         return (name.endsWith(".class") && !name.startsWith("R\\$")
                 && !"R.class".equals(name) && !"BuildConfig.class".equals(name)
                 && "android/support/v7/app/AppCompatActivity.class".equals(name));
     }
-    /**
-     * 处理文件目录下的class文件
-     */
+
     static void handleDirectoryInput(DirectoryInput directoryInput, TransformOutputProvider outputProvider) throws IOException {
-        //是否是目录
-        System.out.println("----------- deal with class file < + ");
         if (directoryInput.getFile().isDirectory()) {
-            //列出目录所有文件（包含子文件夹，子文件夹内文件）
             for (File file:directoryInput.getFile().listFiles()){
                 System.out.println("----------- deal with class file <'"+ file.getName() + "");
                 if (checkClassFile(file.getName())){
@@ -117,7 +104,6 @@ public class MyTransform extends Transform {
                 }
             }
         }
-        //处理完输入文件之后，要把输出给下一个任务
         File dest = outputProvider.getContentLocation(directoryInput.getName(),
                 directoryInput.getContentTypes(), directoryInput.getScopes(),
                 Format.DIRECTORY);
@@ -128,7 +114,6 @@ public class MyTransform extends Transform {
      */
     static void handleJarInputs(JarInput jarInput, TransformOutputProvider outputProvider) throws IOException {
         if (jarInput.getFile().getAbsolutePath().endsWith(".jar")) {
-            //重名名输出文件,因为可能同名,会覆盖
             String jarName = jarInput.getName();
             String md5Name = DigestUtils.md5Hex(jarInput.getFile().getAbsolutePath());
             if (jarName.endsWith(".jar")) {
@@ -137,12 +122,10 @@ public class MyTransform extends Transform {
             JarFile jarFile = new JarFile(jarInput.getFile());
             Enumeration enumeration = jarFile.entries();
             File tmpFile = new File(jarInput.getFile().getParent() + File.separator + "classes_temp.jar");
-            //避免上次的缓存被重复插入
             if (tmpFile.exists()) {
                 tmpFile.delete();
             }
             JarOutputStream jarOutputStream = new JarOutputStream(new FileOutputStream(tmpFile));
-            //用于保存
             while (enumeration.hasMoreElements()) {
                 JarEntry jarEntry = (JarEntry) enumeration.nextElement();
                 String entryName = jarEntry.getName();

@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: "com.gradle.plugin-publish"
 
 dependencies {
     compile gradleApi()
@@ -24,11 +25,22 @@ sourceSets {
         }
     }
 }
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
+    }
+}
+
 repositories {
     mavenCentral()
 }
 //设置maven deployer
-uploadArchives {
+/*uploadArchives {
     repositories {
         mavenDeployer {
             //设置插件的GAV参数
@@ -39,4 +51,25 @@ uploadArchives {
             repository(url: uri('G:/myplugin'))
         }
     }
+}*/
+
+version = "1.0.6"    //配置插件的版本号
+group = "com.lqf.plugin"   //插件的群组，插件的classpath会用到
+
+
+pluginBundle {
+
+    website = 'https://github.com/lqfGaara/AOPUiAdapter'
+    vcsUrl = 'https://github.com/lqfGaara/AOPUiAdapter.git'
+    description = 'AOPUiUtils for android'  //插件描述
+    tags = ['asm', 'AopUi']  //插件的tag。可以通过这个在插件门户上搜索
+
+    plugins {
+        greetingsPlugin {
+            id = 'com.lqf.gradle'   //插件的id，到时候apply的插件id
+            displayName = 'AopUiAdapter_plugin'
+        }
+    }
+
+
 }
