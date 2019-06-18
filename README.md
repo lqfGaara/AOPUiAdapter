@@ -23,5 +23,20 @@ dependencies {
     implementation 'com.github.lqfGaara:Utils:v1.2'
 }
   ```
+#### The results are as follows：
+ Mobile phone resolution 540*960
+ 
+ Mobile phone resolution 720*1280
+ 
+ Mobile phone resolution 900*1600
 
+ Mobile phone resolution 1080*1920
+ 
+ 
+ Mobile phone resolution 540*960
+ 
+ Mobile phone resolution 720*1280
+ 
+ Mobile phone resolution 900*1600
 
+ Mobile phone resolution 1080*1920
