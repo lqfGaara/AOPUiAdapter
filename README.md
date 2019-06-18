@@ -1,3 +1,4 @@
+Whether you're still bothered about Android UI adaptation, don't bother anymore. Interview AOP programming plugins will solve your pain.
 
 #### Usage
 1.Under the build. gradle file of the project：
