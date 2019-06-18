@@ -1,5 +1,6 @@
 不管你是否还在为Android用户界面的适应而烦恼，不要再烦恼了。访问AOP编程插件将解决您的痛苦。为了在不同分辨率的手机上显示相同的效果。
 
+## [README of English][https://github.com/lqfGaara/AOPUiAdapter/edit/master/README.md]
 
 #### 使用方式
 1.在项目的build.gradle中添加：
