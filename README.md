@@ -25,18 +25,20 @@ dependencies {
   ```
 #### The results are as follows：
  Mobile phone resolution 540*960
+>![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af540960.jpg)
  
  Mobile phone resolution 720*1280
- 
+>![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af7201280.jpg)
  Mobile phone resolution 900*1600
-
+>![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af9001600.jpg)
  Mobile phone resolution 1080*1920
- 
+ >![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af10801920.jpg)
  
  Mobile phone resolution 540*960
- 
+ >![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af540960.jpg)
  Mobile phone resolution 720*1280
- 
+ >![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af540960.jpg)
  Mobile phone resolution 900*1600
-
+>![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af540960.jpg)
  Mobile phone resolution 1080*1920
+>![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af540960.jpg)
