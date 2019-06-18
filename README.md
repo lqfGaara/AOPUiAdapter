@@ -1,5 +1,7 @@
 Whether you're still bothered about Android UI adaptation, don't bother anymore. Interview AOP programming plugins will solve your pain. In order to display the same effect on mobile phones with different resolutions.
 
+[中文文档](https://github.com/lqfGaara/AOPUiAdapter/edit/master/CNREADME.md)
+
 #### Usage
 1.Under the build. gradle file of the project：
 
