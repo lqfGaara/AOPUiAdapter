@@ -84,7 +84,7 @@ public class MyTransform extends Transform {
     static boolean checkClassFile(String name) {
         return (name.endsWith(".class") && !name.startsWith("R\\$")
                 && !"R.class".equals(name) && !"BuildConfig.class".equals(name)
-                && "android/support/v7/app/AppCompatActivity.class".equals(name));
+                && "android/support/v4/app/FragmentActivity.class".equals(name));
     }
 
     static void handleDirectoryInput(DirectoryInput directoryInput, TransformOutputProvider outputProvider) throws IOException {
