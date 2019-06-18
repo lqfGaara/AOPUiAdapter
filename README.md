@@ -35,7 +35,7 @@ dependencies {
 
  Mobile phone resolution 1080*1920
  >![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/af10801920.jpg)
- 
+ #### If not used are as follows:
  Mobile phone resolution 540*960
  >![](https://github.com/lqfGaara/AOPUiAdapter/blob/master/bf540960.jpg)
  
