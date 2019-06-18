@@ -14,7 +14,7 @@ public class TestMethodAdapter extends MethodVisitor implements Opcodes {
         super.visitCode();
         mv.visitVarInsn(Opcodes.ALOAD, 0);
         mv.visitVarInsn(Opcodes.ALOAD, 0);
-        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "lqf/com/asmdemo/MainActivity", "getApplication", "()Landroid/app/Application;", false);
+        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "android/support/v4/app/FragmentActivity", "getApplication", "()Landroid/app/Application;", false);
         mv.visitIntInsn(Opcodes.SIPUSH, 360);
         mv.visitMethodInsn(Opcodes.INVOKESTATIC, "lqf/com/myutils2/ScreenUtils", "setCustomDebsity", "(Landroid/app/Activity;Landroid/app/Application;I)V", false);
         mv.visitEnd();

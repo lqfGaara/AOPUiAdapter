@@ -53,7 +53,7 @@ repositories {
     }
 }*/
 
-version = "1.0.7"    //配置插件的版本号
+version = "1.1.9"    //配置插件的版本号
 group = "com.lqf.plugin"   //插件的群组，插件的classpath会用到
 
 
